@@ -8,8 +8,8 @@ Masterless, Salt powered Vagrant Php box.
 
 ### Set up
 * `git clone https://github.com/adammbalogh/php-salt-box.git`
-* Customize **Vagrantfile**
-* `vagrant up` *takes several minutes*
+* Customize **Vagrantfile** *(optional)*
+* `vagrant up` *(takes several minutes)*
 
 ### Customize
 * change environment in **salt/minion**
@@ -19,6 +19,7 @@ Masterless, Salt powered Vagrant Php box.
 
 ### Know-how
 * Simply use the **www** directory
+* Go to 192.168.33.10 *(default ip)*
 
 ### Components
 * core
