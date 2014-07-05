@@ -22,21 +22,16 @@ Masterless, Salt powered Vagrant Php box.
 * Go to 192.168.33.10 *(default ip)*
 
 ### Components
-* core
-  * mc
-  * htop
-  * zip
-  * unzip
+* core (curl, mc, htop, zip, unzip)
 * git 
 * openssl
 * nginx
 * php-fpm (php5.5)
+* composer
 
 ### Todo
 * components
-  * composer
-  * mysql
-  * mongodb
-  * redis
   * xdebug
-  * python
+  * mysql
+  * redis
+  * mongodb
