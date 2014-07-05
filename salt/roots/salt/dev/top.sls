@@ -5,3 +5,4 @@ base:
     - git
     - nginx
     - php
+    - composer
