@@ -5,3 +5,4 @@ prod:
     - nginx
     - git
     - php
+    - composer
