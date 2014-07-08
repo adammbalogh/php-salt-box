@@ -6,3 +6,4 @@ prod:
     - git
     - php
     - composer
+    - tools.webgrind

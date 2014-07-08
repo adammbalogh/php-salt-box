@@ -9,7 +9,7 @@ nginx:
     gzip: "on"
   vhost:
     port: 80
-    root: "/var/www"
+    app_root: "/var/www/app"
     cache_static_files: "off"
     error_log: "/var/log/nginx/default_error.log"
 
@@ -28,3 +28,8 @@ php:
     gc_maxlifetime: 28800
     cookie_lifetime: 0
     serialize_handler: "php"
+  xdebug:
+    idekey: "phpsaltbox"
+    remote_enable: 1
+    profiler_enable: 1
+
