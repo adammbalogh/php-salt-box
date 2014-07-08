@@ -18,20 +18,20 @@ Masterless, Salt powered Vagrant Php box.
   * see configs.sls.example to the entire configuration
 
 ### Know-how
-* Simply use the **www** directory
+* Simply use the **app** directory as the root of your application
 * Go to 192.168.33.10 *(default ip)*
+* Go to 192.168.33.10:8080 for tools (like webgrind for profiling)
 
 ### Components
 * core (curl, mc, htop, zip, unzip)
-* git 
+* git
 * openssl
-* nginx
-* php-fpm (php5.5)
+* nginx 1.6
+* php 5.5 (fpm)
+  * xdebug (with web and cli debugging by default)
 * composer
 
 ### Todo
 * components
-  * xdebug
   * mysql
   * redis
-  * mongodb
