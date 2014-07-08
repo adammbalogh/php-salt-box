@@ -9,3 +9,6 @@ php:
   track_errors: "Off"
   session:
     gc_maxlifetime: 7200
+  xdebug:
+    remote_enable: 0
+    profiler_enable: 0

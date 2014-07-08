@@ -6,3 +6,4 @@ base:
     - nginx
     - php
     - composer
+    - tools.webgrind

@@ -2,7 +2,7 @@ server {
     listen {{ salt['pillar.get']('nginx:vhost:port', 80) }};
     server_name localhost;
 
-    root {{ salt['pillar.get']('nginx:vhost:root', '/var/www') }};
+    root {{ salt['pillar.get']('nginx:vhost:root', '/var/www/app') }};
     index index.php index.html index.htm;
 
     location / {
