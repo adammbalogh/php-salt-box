@@ -20,18 +20,22 @@ Masterless, Salt powered Vagrant Php box.
 ### Know-how
 * Simply use the **app** directory as the root of your application
 * Go to 192.168.33.10 *(default ip)*
-* Go to 192.168.33.10:8080 for tools (like webgrind for profiling)
+* Go to 192.168.33.10:8080 for tools (e.g. phpmyadmin, webgrind)
 
 ### Components
-* core (curl, mc, htop, zip, unzip)
+* ubuntu 12.04
+* core (curl, htop...)
 * git
 * openssl
 * nginx 1.6
 * php 5.5 (fpm)
   * xdebug (with web and cli debugging by default)
 * composer
+* mysql 5.5
+* tools
+  * phpmyadmin (rev: stable)
+  * webgrind
 
 ### Todo
 * components
-  * mysql
   * redis
