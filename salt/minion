@@ -156,8 +156,10 @@ file_client: local
 file_roots:
   base:
     - /srv/salt/dev
+    - /srv/formulas/mysql-formula
   prod:
     - /srv/salt/prod
+    - /srv/formulas/mysql-formula
 
 # The hash_type is the hash to use when discovering the hash of a file in
 # the minion directory, the default is md5, but sha1, sha224, sha256, sha384

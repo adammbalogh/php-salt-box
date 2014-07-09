@@ -6,4 +6,6 @@ base:
     - nginx
     - php
     - composer
+    - mysql
+    - tools.phpmyadmin
     - tools.webgrind
