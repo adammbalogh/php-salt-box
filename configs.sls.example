@@ -33,3 +33,7 @@ php:
     remote_enable: 1
     profiler_enable: 1
 
+mysql:
+  # see https://github.com/saltstack-formulas/mysql-formula for all the config options
+  server:
+    root_password: 'root'
