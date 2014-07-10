@@ -134,41 +134,23 @@ environment: base
 # defined below by setting it to local.
 file_client: local
 
-# The file directory works on environments passed to the minion, each environment
-# can have multiple root directories, the subdirectories in the multiple file
-# roots cannot match, otherwise the downloaded files will not be able to be
-# reliably ensured. A base environment is required to house the top file.
-# Example:
-# file_roots:
-#   base:
-#     - /srv/salt/
-#   dev:
-#     - /srv/salt/dev/services
-#     - /srv/salt/dev/states
-#   prod:
-#     - /srv/salt/prod/services
-#     - /srv/salt/prod/states
-#
-# Default:
-#file_roots:
-#  base:
-#    - /srv/salt
 file_roots:
   base:
     - /srv/salt/dev
     - /srv/formulas/mysql-formula
+    - /srv/formulas/redis-formula
+    - /srv/formulas/node-formula
   prod:
     - /srv/salt/prod
     - /srv/formulas/mysql-formula
+    - /srv/formulas/redis-formula
+    - /srv/formulas/node-formula
 
 # The hash_type is the hash to use when discovering the hash of a file in
 # the minion directory, the default is md5, but sha1, sha224, sha256, sha384
 # and sha512 are also supported.
 #hash_type: md5
 
-# The Salt pillar is searched for locally if file_client is set to local. If
-# this is the case, and pillar data is defined, then the pillar_roots need to
-# also be configured on the minion:
 pillar_roots:
   base:
     - /srv/pillar/dev
