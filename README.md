@@ -7,7 +7,7 @@ Masterless, Salt powered Vagrant Php box.
 * [Vagrant](http://www.vagrantup.com/) 1.3.0+
 
 ### Set up
-* `git clone https://github.com/adammbalogh/php-salt-box.git`
+* `git clone --recursive https://github.com/adammbalogh/php-salt-box.git`
 * Customize **Vagrantfile** *(optional)*
 * `vagrant up` *(takes several minutes)*
 
@@ -20,7 +20,8 @@ Masterless, Salt powered Vagrant Php box.
 ### Know-how
 * Simply use the **app** directory as the root of your application
 * Go to 192.168.33.10 *(default ip)*
-* Go to 192.168.33.10:8080 for tools (e.g. phpmyadmin, webgrind)
+* Go to 192.168.33.10:8080 for tools (phpmyadmin, webgrind)
+* Go to 192.168.33.10:8081 for redis admin (redis-commander)
 
 ### Components
 * ubuntu 12.04
@@ -32,10 +33,9 @@ Masterless, Salt powered Vagrant Php box.
   * xdebug (with web and cli debugging by default)
 * composer
 * mysql 5.5
+* nodejs 0.10.22
+* redis
 * tools
   * phpmyadmin (rev: stable)
   * webgrind
-
-### Todo
-* components
-  * redis
+  * redis admin (redis-commander)
