@@ -9,7 +9,7 @@ nginx:
     gzip: "on"
   vhost:
     port: 80
-    app_root: "/var/www/app"
+    root: "/var/www/app"
     cache_static_files: "off"
     error_log: "/var/log/nginx/default_error.log"
 
