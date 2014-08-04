@@ -4,7 +4,7 @@ php5_ppa:
 
 php5-fpm:
   pkg.latest:
-    - refresh: True
+    - force_yes: true
     - require:
       - pkgrepo: php5_ppa
     - names:
@@ -14,7 +14,6 @@ php5-fpm:
       - php5-intl
       - php5-mcrypt
       - php5-curl
-      - php5-memcache
       - php5-mysql
       - php5-xdebug
   service.running:

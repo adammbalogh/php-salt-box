@@ -2,13 +2,13 @@ prod:
   '*':
     - core
     - ssl
-    - nginx
     - git
+    - nodejs
+    - nginx
     - php
     - composer
     - mysql
     - redis
-    - node
     - tools.redis-commander
     - tools.phpmyadmin
     - tools.webgrind

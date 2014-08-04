@@ -1,6 +1,3 @@
 [submodule "salt/roots/formulas/redis-formula"]
 	path = salt/roots/formulas/redis-formula
 	url = https://github.com/saltstack-formulas/redis-formula.git
-[submodule "salt/roots/formulas/node-formula"]
-	path = salt/roots/formulas/node-formula
-	url = https://github.com/saltstack-formulas/node-formula.git
