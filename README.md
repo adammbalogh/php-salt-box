@@ -9,7 +9,7 @@ Masterless, Salt powered Vagrant Php box.
 ### Set up
 * `git clone --recursive https://github.com/adammbalogh/php-salt-box.git`
 * Customize **Vagrantfile** *(optional)*
-* `vagrant up` *(takes several minutes)*
+* `vagrant up` *(takes ~30 minutes)*
 
 ### Customize
 * change environment in **salt/minion**
@@ -24,8 +24,7 @@ Masterless, Salt powered Vagrant Php box.
 * Go to 192.168.33.10:8081 for redis admin (redis-commander)
 
 ### Components
-* ubuntu 12.04
-* core (curl, htop...)
+* ubuntu 14.04
 * git
 * openssl
 * nginx 1.6
@@ -33,9 +32,9 @@ Masterless, Salt powered Vagrant Php box.
   * xdebug (with web and cli debugging by default)
 * composer
 * mysql 5.5
-* nodejs 0.10.22
+* nodejs 0.10.30
 * redis
 * tools
-  * phpmyadmin (rev: stable)
+  * phpmyadmin
   * webgrind
   * redis admin (redis-commander)
