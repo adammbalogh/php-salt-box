@@ -4,8 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box = "ubuntu/trusty64"
 
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.synced_folder "salt/roots/", "/srv/"
@@ -20,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     salt.minion_config = "salt/minion"
     salt.colorize = true
     salt.verbose = true
-    salt.log_level = "warning"
+    salt.log_level = "error"
     salt.run_highstate = true
   end
 end

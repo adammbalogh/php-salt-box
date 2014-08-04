@@ -1,6 +1,2 @@
 redis:
   user: vagrant
-
-node:
-  version: 0.10.22
-  checksum: d7c6a39dfa714eae1f8da7a00c9a07efd74a03b3
