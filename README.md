@@ -9,7 +9,7 @@ Masterless, Salt powered Vagrant Php box.
 ### Set up
 * `git clone --recursive https://github.com/adammbalogh/php-salt-box.git`
 * Customize **Vagrantfile** *(optional)*
-* `vagrant up` *(takes several minutes)*
+* `vagrant up` *(takes ~30 minutes)*
 
 ### Customize
 * change environment in **salt/minion**
