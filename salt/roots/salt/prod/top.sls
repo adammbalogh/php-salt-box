@@ -9,6 +9,5 @@ prod:
     - composer
     - mysql
     - redis
-    - tools.redis-commander
     - tools.phpmyadmin
     - tools.webgrind

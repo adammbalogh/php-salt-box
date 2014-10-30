@@ -9,9 +9,9 @@ nginx:
     gzip: "on"
   vhost:
     port: 80
-    root: "/var/www/app"
+    root: "/var/www/application/public"
     cache_static_files: "off"
-    error_log: "/var/log/nginx/default_error.log"
+    error_log: "/var/log/nginx/application_error.log"
 
 php:
   display_errors: "On"
@@ -45,8 +45,3 @@ redis:
 
 nodejs:
   version: 0.10.30
-
-redis-commander:
-  port: 8081
-  admin_user: root
-  admin_pass: root

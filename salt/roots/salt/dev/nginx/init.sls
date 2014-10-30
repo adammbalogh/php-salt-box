@@ -13,10 +13,10 @@ nginx:
     - watch:
       - file: /etc/nginx/nginx.conf
       - file: /etc/nginx/sites-enabled/tools
-      - file: /etc/nginx/sites-enabled/default
+      - file: /etc/nginx/sites-enabled/application
       - pkg: nginx
 
-/var/www/app:
+/var/www/application/public:
   file:
     - directory
     - user: vagrant
@@ -38,25 +38,34 @@ nginx-conf:
     - source: salt://_files/nginx/conf/nginx.conf
     - template: jinja
     - require:
-      - file: /var/www/app
+      - file: /var/www/application/public
       - file: /var/www/tools
       - pkg: nginx
 
-nginx-vhost-default:
-  file.managed:
-    - name: /etc/nginx/sites-available/default
-    - source: salt://_files/nginx/vhosts/default
-    - template: jinja
+nginx-remove-senabled-default:
+  cmd.run:
+    - name: rm /etc/nginx/sites-enabled/default
+    - cwd: /root/
     - require:
       - file: nginx-conf
       - pkg: nginx
 
-nginx-vhost-default-enabled:
-  file.symlink:
-    - name: /etc/nginx/sites-enabled/default
-    - target: /etc/nginx/sites-available/default
+nginx-vhost-application:
+  file.managed:
+    - name: /etc/nginx/sites-available/application
+    - source: salt://_files/nginx/vhosts/application
+    - template: jinja
     - require:
-      - file: nginx-vhost-default
+      - file: nginx-conf
+      - pkg: nginx
+      - cmd: nginx-remove-senabled-default
+
+nginx-vhost-application-enabled:
+  file.symlink:
+    - name: /etc/nginx/sites-enabled/application
+    - target: /etc/nginx/sites-available/application
+    - require:
+      - file: nginx-vhost-application
 
 nginx-vhost-tools:
   file.managed:
@@ -64,7 +73,7 @@ nginx-vhost-tools:
     - source: salt://_files/nginx/vhosts/tools
     - template: jinja
     - require:
-      - file: nginx-vhost-default
+      - file: nginx-vhost-application
       - pkg: nginx
 
 nginx-vhost-tools-enabled:

@@ -8,11 +8,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.synced_folder "salt/roots/", "/srv/"
-  config.vm.synced_folder "app/", "/var/www/app/"
+  config.vm.synced_folder "application/", "/var/www/application/"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "80"]
+    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
   end
 
   config.vm.provision :salt do |salt|

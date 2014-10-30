@@ -2,15 +2,14 @@ server {
     listen {{ salt['pillar.get']('nginx:vhost:port', 80) }};
     server_name localhost;
 
-    root {{ salt['pillar.get']('nginx:vhost:root', '/var/www/app') }};
+    root {{ salt['pillar.get']('nginx:vhost:root', '/var/www/application/public') }};
     index index.php index.html index.htm;
 
     location / {
-        try_files $uri $uri/ =404;
+        try_files $uri $uri/ @rewrite;
     }
 
     location ~ \.php$ {
-        try_files $uri /index.php =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_index index.php;
@@ -26,5 +25,9 @@ server {
     }
 {% endif %}
 
-    error_log {{ salt['pillar.get']('nginx:vhost:error_log', '/var/log/nginx/default_error.log') }};
+    location @rewrite {
+        rewrite ^ /index.php;
+    }
+
+    error_log {{ salt['pillar.get']('nginx:vhost:error_log', '/var/log/nginx/application_error.log') }};
 }
