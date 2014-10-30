@@ -29,6 +29,16 @@ php-ini:
     - require:
       - pkg: php5-fpm
 
+/var/lib/php:
+  file:
+    - directory
+    - user: www-data
+    - group: vagrant
+    - mode: 775
+    - makedirs: True
+    - require:
+      - pkg: php5-fpm
+
 php-cli-ini:
   file.managed:
     - name: /etc/php5/cli/php.ini

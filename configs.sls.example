@@ -23,7 +23,7 @@ php:
   upload_max_filesize: "10M"
   session:
     save_handler: "files"
-    save_path: "/var/lib/php5"
+    save_path: "/var/lib/php"
     name: "PSBSESSID"
     gc_maxlifetime: 28800
     cookie_lifetime: 0
